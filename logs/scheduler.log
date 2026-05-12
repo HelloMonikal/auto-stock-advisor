@@ -1,0 +1,45 @@
+[2026-04-30 00:06:27] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:06:27] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:06:27] [INFO] 已注册任务: morning 每天 10:00
+[2026-04-30 00:06:27] [INFO] 已注册任务: morning 每天 10:00
+[2026-04-30 00:06:27] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:06:27] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:06:27] [INFO] 已注册任务: afternoon 每天 16:00
+[2026-04-30 00:06:27] [INFO] 已注册任务: afternoon 每天 16:00
+[2026-04-30 00:06:27] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:06:27] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:06:27] [INFO] 已注册任务: evening 每天 21:00
+[2026-04-30 00:06:27] [INFO] 已注册任务: evening 每天 21:00
+[2026-04-30 00:06:27] [INFO] 调度器启动，等待任务触发...
+[2026-04-30 00:06:27] [INFO] 调度器启动，等待任务触发...
+[2026-04-30 00:06:27] [INFO] 时区: Asia/Shanghai（北京时间）
+[2026-04-30 00:06:27] [INFO] 时区: Asia/Shanghai（北京时间）
+[2026-04-30 00:06:27] [INFO] 推送时间: 10:00 / 16:00 / 21:00
+[2026-04-30 00:06:27] [INFO] 推送时间: 10:00 / 16:00 / 21:00
+[2026-04-30 00:06:27] [INFO] 按 Ctrl+C 停止
+
+[2026-04-30 00:06:27] [INFO] 按 Ctrl+C 停止
+
+[2026-04-30 00:06:27] [INFO] Added job "推荐推送 - morning" to job store "default"
+[2026-04-30 00:06:27] [INFO] Added job "推荐推送 - morning" to job store "default"
+[2026-04-30 00:06:27] [INFO] Added job "推荐推送 - afternoon" to job store "default"
+[2026-04-30 00:06:27] [INFO] Added job "推荐推送 - afternoon" to job store "default"
+[2026-04-30 00:06:27] [INFO] Added job "推荐推送 - evening" to job store "default"
+[2026-04-30 00:06:27] [INFO] Added job "推荐推送 - evening" to job store "default"
+[2026-04-30 00:06:27] [INFO] Scheduler started
+[2026-04-30 00:06:27] [INFO] Scheduler started
+[2026-04-30 00:08:08] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:08:08] [INFO] 已注册任务: morning 每天 10:00
+[2026-04-30 00:08:08] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:08:08] [INFO] 已注册任务: afternoon 每天 16:00
+[2026-04-30 00:08:08] [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+[2026-04-30 00:08:08] [INFO] 已注册任务: evening 每天 21:00
+[2026-04-30 00:08:08] [INFO] 调度器启动，等待任务触发...
+[2026-04-30 00:08:08] [INFO] 时区: Asia/Shanghai（北京时间）
+[2026-04-30 00:08:08] [INFO] 推送时间: 10:00 / 16:00 / 21:00
+[2026-04-30 00:08:08] [INFO] 按 Ctrl+C 停止
+
+[2026-04-30 00:08:08] [INFO] Added job "推荐推送 - morning" to job store "default"
+[2026-04-30 00:08:08] [INFO] Added job "推荐推送 - afternoon" to job store "default"
+[2026-04-30 00:08:08] [INFO] Added job "推荐推送 - evening" to job store "default"
+[2026-04-30 00:08:08] [INFO] Scheduler started

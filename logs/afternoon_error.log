@@ -1,0 +1,45 @@
+[2026-04-30 14:31:59] [INFO] 开始执行推荐流程 | 时段: afternoon | 测试模式: False
+[2026-04-30 14:31:59] [INFO] [Step 1/4] 获取数据...
+[2026-04-30 14:32:04] [INFO] 股票型基金排行获取成功，共 1059 条
+[2026-04-30 14:32:31] [WARNING] 获取混合型排行失败（第1次）: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-04-30 14:32:31] [ERROR] NVDA: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:33:02] [ERROR] AMD: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:33:34] [ERROR] AVGO: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:34:07] [ERROR] TSM: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:34:14] [INFO] 混合型基金排行获取成功，共 8316 条
+[2026-04-30 14:34:39] [ERROR] QCOM: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:34:40] [INFO] 共筛选 30 只基金（科技类 1591 只）
+[2026-04-30 14:34:40] [INFO] A 股基金数据获取完成，共 30 只
+[2026-04-30 14:50:26] [ERROR] AMAT: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:51:01] [ERROR] MU: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:51:34] [ERROR] MSFT: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:52:06] [ERROR] GOOGL: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:52:42] [ERROR] META: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 14:53:15] [ERROR] AMZN: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:00:38] [ERROR] ORCL: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:01:09] [ERROR] CRM: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:01:39] [ERROR] NOW: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:02:09] [ERROR] PLTR: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:02:40] [ERROR] SNOW: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:03:10] [ERROR] DDOG: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:03:41] [ERROR] NET: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:04:11] [ERROR] ZS: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:04:41] [ERROR] CRWD: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:05:12] [ERROR] AAPL: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:05:42] [ERROR] NFLX: 获取失败 - 'NoneType' object is not subscriptable
+[2026-04-30 15:05:42] [INFO] 美股数据获取完成，共 0 只
+[2026-04-30 15:05:42] [INFO] [Step 2/4] DeepSeek 分析...
+[2026-04-30 15:05:43] [INFO] 调用 DeepSeek 分析美股推荐（时段: 下午（16:00））...
+[2026-04-30 15:05:43] [INFO] 调用 DeepSeek 分析 A 股基金推荐（时段: 下午（16:00））...
+[2026-04-30 15:05:44] [INFO] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-04-30 15:05:45] [INFO] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-04-30 15:05:47] [INFO] 美股推荐分析完成，已保存至 /Users/hellomonikal/projects/usefultool/auto_stock_advisor/.tmp/us_recommendations.json
+[2026-04-30 15:05:47] [INFO] 美股推荐分析完成
+[2026-04-30 15:06:00] [INFO] A 股基金推荐分析完成，已保存至 /Users/hellomonikal/projects/usefultool/auto_stock_advisor/.tmp/fund_recommendations.json
+[2026-04-30 15:06:00] [INFO] A股基金推荐分析完成
+[2026-04-30 15:06:00] [INFO] [Step 3/4] 发送 Telegram...
+[2026-04-30 15:06:03] [WARNING] 发送失败（第1次）: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8797575306:AAG11Ru8lekNy7VFPF8YSCWDQSPTYtffvXc/sendMessage (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))
+[2026-04-30 15:06:15] [INFO] Telegram 消息发送成功
+[2026-04-30 15:06:15] [INFO] [Step 4/4] 归档历史...
+[2026-04-30 15:06:15] [INFO] 推荐历史归档完成，新增 5 条
+[2026-04-30 15:06:15] [INFO] 全流程完成，耗时 2056.0s

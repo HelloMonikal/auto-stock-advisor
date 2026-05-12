@@ -1,0 +1,12 @@
+.env
+.tmp/
+logs/
+__pycache__/
+*.pyc
+.DS_Store
+credentials.json
+token.json
+.git/
+.gitignore
+deploy.sh
+docker-compose.yml
