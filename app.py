@@ -485,6 +485,8 @@ def page_portfolio():
         _summary_metrics(a_pos, "¥", "🇨🇳")
 
         st.divider()
+        _render_portfolio_charts(enriched)
+        st.divider()
 
         # ── 持仓明细 ─────────────────────────────────────────────────────────
         for e in enriched:
@@ -539,6 +541,67 @@ def page_portfolio():
         for p in closed_pos[-10:]:
             e = _calc_pnl_inline(p, float(p["sell_price"]))
             _render_position_card(e, is_open=False)
+
+
+def _render_portfolio_charts(enriched: list):
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+
+    valid = [e for e in enriched if e.get("current_value") is not None]
+    if not valid:
+        return
+
+    # ── 饼图数据 ──────────────────────────────────────────────────────────────
+    labels = [f"{e.get('name') or e['symbol']} ({e['symbol']})" for e in valid]
+    values = [e["current_value"] for e in valid]
+    colors = ["#1565C0" if e["market"] == "US" else "#C62828" for e in valid]
+
+    # ── 盈亏柱状图数据 ────────────────────────────────────────────────────────
+    bar_labels = [e.get("name") or e["symbol"] for e in valid]
+    bar_values = [e.get("pnl_pct") or 0.0 for e in valid]
+    bar_colors = ["#00C853" if v >= 0 else "#FF1744" for v in bar_values]
+
+    fig = make_subplots(
+        rows=1, cols=2,
+        specs=[[{"type": "domain"}, {"type": "xy"}]],
+        subplot_titles=("仓位分布（当前市值）", "各持仓盈亏 %"),
+    )
+
+    fig.add_trace(
+        go.Pie(
+            labels=labels,
+            values=values,
+            marker=dict(colors=colors),
+            textinfo="percent+label",
+            hovertemplate="%{label}<br>市值：%{value:,.2f}<br>占比：%{percent}<extra></extra>",
+            hole=0.35,
+        ),
+        row=1, col=1,
+    )
+
+    fig.add_trace(
+        go.Bar(
+            x=bar_labels,
+            y=bar_values,
+            marker_color=bar_colors,
+            text=[f"{v:+.2f}%" for v in bar_values],
+            textposition="outside",
+            hovertemplate="%{x}<br>盈亏：%{y:+.2f}%<extra></extra>",
+        ),
+        row=1, col=2,
+    )
+
+    fig.update_layout(
+        height=360,
+        margin=dict(t=40, b=20, l=10, r=10),
+        showlegend=False,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(size=12),
+    )
+    fig.update_yaxes(ticksuffix="%", row=1, col=2)
+
+    st.plotly_chart(fig, use_container_width=True)
 
 
 def _calc_pnl_inline(position: dict, current_price: Optional[float]) -> dict:
